@@ -17,5 +17,7 @@
 
 (defn attack [attacker target]
   (let [damage (:damage (:weapon attacker))]
-    (swap! target update-in [:hull] - damage)
+    (if (has-shield? target)
+    (swap! target update-in [:systems :shield :current-hp] - damage)
+    (swap! target update-in [:hull] - damage))
     (println "Attack succeeded!")))
