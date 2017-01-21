@@ -10,9 +10,6 @@
                     :systems {:shield {:max-hp 3 :current-hp}
                     :weapon {:damage 10}}))
 
-(defn status [ship] 
-  (println "Ship: " (:name @ship)
-  (println "Hull: " (:hull @ship))))
 
 (defn attack [attacker target]
   (let [damage (:damage (:weapon attacker))]
