@@ -11,6 +11,10 @@
                     :weapon {:damage 10}}))
 
 
+(defn has-shield? [ship]
+  (and (get-in ship [:systems :shield]))
+       (< 0 (get-in ship [:systems :shield :current-hp])))
+
 (defn attack [attacker target]
   (let [damage (:damage (:weapon attacker))]
     (swap! target update-in [:hull] - damage)
