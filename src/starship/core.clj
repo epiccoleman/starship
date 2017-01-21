@@ -15,6 +15,6 @@
   (println "Hull: " (:hull @ship))))
 
 (defn attack [attacker target]
-  (let [damage (:damage (:weapon @attacker))]
+  (let [damage (:damage (:weapon attacker))]
     (swap! target update-in [:hull] - damage)
     (println "Attack succeeded!")))
