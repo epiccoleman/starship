@@ -12,8 +12,8 @@
 
 
 (defn has-shield? [ship]
-  (and (get-in ship [:systems :shield]))
-       (< 0 (get-in ship [:systems :shield :current-hp])))
+  (and (get-in @ship [:systems :shield]))
+       (< 0 (get-in @ship [:systems :shield :current-hp])))
 
 (defn attack [attacker target]
   (let [damage (get-in @attacker [:systems :weapon :damage])]
