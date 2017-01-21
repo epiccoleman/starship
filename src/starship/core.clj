@@ -2,13 +2,13 @@
 
 (def ship (atom {:name "The Kestrel"
                  :hull 100 
-                 :systems {:shield {:max-hp 3 :current-hp}
-                           :weapon {:damage 10}}))
+                 :systems {:shield {:max-hp 3 :current-hp 3}
+                           :weapon {:damage 10}}}))
 
 (def bad-guy (atom {:name "Pirate Cruiser" 
                     :hull 80 
-                    :systems {:shield {:max-hp 3 :current-hp}
-                    :weapon {:damage 10}}))
+                    :systems {:shield {:max-hp 3 :current-hp 3}
+                    :weapon {:damage 10}}}))
 
 
 (defn has-shield? [ship]
